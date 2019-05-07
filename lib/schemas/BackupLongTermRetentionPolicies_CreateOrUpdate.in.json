@@ -1,0 +1,93 @@
+{
+    "type": "object",
+    "properties": {
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "serverName": {
+            "required": true,
+            "type": "string"
+        },
+        "databaseName": {
+            "required": true,
+            "type": "string"
+        },
+        "policyName": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "default"
+            ]
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "allOf": [
+                        {
+                            "description": "ARM resource.",
+                            "properties": {
+                                "id": {
+                                    "description": "Resource ID.",
+                                    "readOnly": true,
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "description": "Resource name.",
+                                    "readOnly": true,
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "description": "Resource type.",
+                                    "readOnly": true,
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object",
+                            "x-ms-azure-resource": true
+                        }
+                    ],
+                    "description": "ARM proxy resource.",
+                    "properties": {},
+                    "type": "object"
+                }
+            ],
+            "description": "A long term retention policy.",
+            "properties": {
+                "properties": {
+                    "description": "Resource properties.",
+                    "x-ms-client-flatten": true,
+                    "properties": {
+                        "monthlyRetention": {
+                            "description": "The monthly retention policy for an LTR backup in an ISO 8601 format.",
+                            "type": "string"
+                        },
+                        "weekOfYear": {
+                            "description": "The week of year to take the yearly backup in an ISO 8601 format.",
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "weeklyRetention": {
+                            "description": "The weekly retention policy for an LTR backup in an ISO 8601 format.",
+                            "type": "string"
+                        },
+                        "yearlyRetention": {
+                            "description": "The yearly retention policy for an LTR backup in an ISO 8601 format.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

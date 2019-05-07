@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "locationName": {
+            "required": true,
+            "type": "string"
+        },
+        "longTermRetentionServerName": {
+            "required": true,
+            "type": "string"
+        },
+        "longTermRetentionDatabaseName": {
+            "required": true,
+            "type": "string"
+        },
+        "backupName": {
+            "required": true,
+            "type": "string"
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

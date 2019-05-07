@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "locationName": {
+            "required": true,
+            "type": "string"
+        },
+        "onlyLatestPerDatabase": {
+            "required": false,
+            "type": "boolean"
+        },
+        "databaseState": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "All",
+                "Live",
+                "Deleted"
+            ]
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
